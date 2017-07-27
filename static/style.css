@@ -1,0 +1,156 @@
+/* Layout */
+body {
+    background-color: #000;
+    color: #edebec;
+    font-family: Helvetica, sans-serif;
+}
+
+a,
+h1,
+h2 {
+    color: #d5aa44;
+}
+h1,
+h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+
+a {
+    font-size: 0.8em;
+    color: #d5aa44;
+}
+
+
+a.button {
+    display: inline-block;
+    min-height: 32px;
+    min-width: 32px;
+    line-height: 32px;
+    font-size: 2em;
+    background-color: #1b1b1b;
+    padding: 5px;
+    border: 1px #282828 solid;
+    margin-right: 10px;
+    text-align:center;
+    text-decoration: none;
+}
+
+.button_left {
+    float: left;
+}
+
+
+.metanav {
+    text-align: right;
+    font-size: 0.8em;
+    margin-bottom: 1em;
+
+    background-color: #000;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.71);
+
+    width: 95%;
+    position: fixed;
+    top: 0px;
+    padding: 5px;
+}
+
+.metanav_clean {
+    height: 50px;
+}
+
+.flash {
+    padding: 0.5em;
+    border: 1px dotted #282828;
+}
+.error {
+    background: #550000;
+    padding: 0.5em;
+}
+
+
+/* list */
+
+.entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.entries ul {
+    list-style-type: none;
+}
+
+.entries li {
+    background-color: #1b1b1b;
+    border: 1px #282828 solid;
+    color: #cccccc;
+    font-size: 0.9em;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: justify;
+}
+
+.entries li.read {
+    border-left: 2px #3333ff solid;
+}
+.entries li.marked {
+    border-left: 2px #ff3333 solid;
+}
+.entries li.marked.read {
+    border-left: 2px #7c26cb solid;
+}
+.entries li.new {
+    border-left: 2px white solid;
+}
+
+.entries li a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.entries li a:hover {
+    text-decoration: underline;
+}
+
+.entries li h2 {
+    margin-left: -1em;
+}
+
+#infobar {
+    background-color: #1b1b1b;
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.71);
+
+    position: fixed;
+    bottom: 0;
+    width: 95%;
+}
+
+#infobar p {
+    font-size: xx-small;
+    margin: 5px;
+    text-align: right;
+}
+
+/* item */
+
+#item_content {
+    background-color: #1b1b1b;
+    margin-top: 10px 5px 5px 5px;
+    padding: 5px;
+    border: 1px #282828 solid;
+}
+
+.item pre {
+    color: #000;
+    background-color: #eee;
+    overflow-x: scroll;
+}
+
+.date {
+    display: inline-block;
+    font-style: italic;
+    font-size: 0.8em;
+}

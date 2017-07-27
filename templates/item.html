@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+
+{% block nav %}
+
+    {% if entry.read == 1 %}
+        <a class="button" href="?action=unread">Unread</a>
+    {% else %}
+        <a class="button" href="?action=read">&#128065;</a>
+    {% endif %}
+
+    {% if entry.marked == 1 %}
+        <a class="button" href="?action=unmark">&#x1f494;</a>
+    {% else %}
+        <a class="button" href="?action=mark">❤</a>
+    {% endif %}
+
+    <a class="button" href="/page/{{ session.page }}">✖</a>
+
+{% endblock %}
+
+
+
+{% block body %}
+    <div class="item">
+    
+        <div id="item_content">
+            <h2><a href="{{ entry.source }}">{{ entry.title }}</a></h2>
+
+            <div class="date">{{ entry.date|datetime }} - {{ entry.node_title }}</div>
+
+            {{ entry.description|safe }}
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
+
+
+

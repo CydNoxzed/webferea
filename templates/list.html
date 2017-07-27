@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+
+    {% if not session.show_read %}
+    <a class="button button_left" href="?action=show_read">&#127761;</a>
+    {% else %}
+    <a class="button button_left" href="?action=hide_read">&#127765;</a>
+    {% endif %}
+
+    {% if pagination.has_prev %}
+    <a class="button" href="/page/{{ (pagination.page - 1) }}">&laquo;</a>
+    {% endif %}
+
+    <a class="button" href="/page/{{ pagination.page }}">{{ pagination.page }}</a>
+
+    {% if pagination.has_next %}
+    <a class="button" href="/page/{{ (pagination.page + 1) }}">&raquo;</a>
+    {% endif %}
+
+    {% if not session.logged_in %}
+    <a class="button" href="{{ url_for('login') }}">in</a>
+    {% else %}
+
+        {% if session.page == 1 %}
+        <a class="button button_left" href="{{ url_for('logout') }}">out</a>
+        {% endif %}
+
+    {% endif %}
+
+{% endblock %}
+
+
+
+{% block body %}
+    <ul class="entries">
+    {# {% for item in iterable|sort(attribute='date') %} #}
+    {% for entry in entries %}
+        <li class="{% if entry.read == 1 %}read{% endif %} {% if entry.marked == 1 %}marked{% endif %}">
+        <div class="item_title"><a href="/item/{{ entry.item_id }}">{{ entry.title }}</a></div>
+        <div class="wordcount">{{ ((entry.description|wordcount / 250)|round(0,"ceil"))|int }} Minutes - {{ entry.node_title }}</div>
+        </li>
+    {% else %}
+        <li><em>No entries found...</em></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
