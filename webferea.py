@@ -233,7 +233,7 @@ def show_entries(page):
 
     node_filter = app.config['NODES']
     items_per_page = app.config['ITEMS_PER_PAGE']
-    infobar = getStatisticString( getStatistics(node_filter) )
+    infobar = getStatisticString( node_filter )
 
     # pagination
     entries = getItemsByNodeNames(node_filter)
@@ -356,8 +356,12 @@ def isSQLite3(filename):
             return False
 
 
-def getStatisticString(statistics):
-    return "%s unread items of %s left" % (statistics[1], statistics[0])
+def getStatisticString(node_filter):
+    statistics = getStatistics(node_filter)
+    dbtimestamp = os.path.getmtime(app.config['DATABASE'])
+    dbtimestr = datetime.datetime.fromtimestamp( int(dbtimestamp) \
+                    ).strftime('%Y-%m-%d %H:%M:%S')
+    return "%s unread items of %s left | last sync %s" % (statistics[1], statistics[0], dbtimestr)
 
 
 #----------------------------------
