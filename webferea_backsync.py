@@ -110,7 +110,7 @@ def main():
 
     # upload the clients liferea database
     print("upload...")
-    cmd = "scp -q %s %s:%s" % (client_config["TMP_PATH"], \
+    cmd = "scp -q %s %s:%s" % (client_config["LOCAL_DB"], \
             client_config["REMOTE_HOST"], client_config["REMOTE_DB_PATH"] )
     sh = shell(cmd)
 
