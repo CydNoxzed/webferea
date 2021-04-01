@@ -1,3 +1,5 @@
+*DEPRECATED* see [https://github.com/CydNoxzed/webferea2](https://github.com/CydNoxzed/webferea2) for successor.
+
 # Webferea
 
 This is a web counterpart to the GTK+ news aggregator [Liferea](https://lzone.de/liferea/ "Liferea"). Webferea syncs the sqlite-database of Liferea over ssh on a server which runs your Webferea instance. You can read selected feeds over the webinterface and flag their entites as *read* or *marked*. On the next sync, the flags are applied to your sqlite-database of Liferea and new entitites are uploaded to the web.
